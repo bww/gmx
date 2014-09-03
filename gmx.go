@@ -57,11 +57,11 @@ func Keys() []string {
 }
 
 // Obtain values
-func Value(key string) interface{} {
+func Value(key string) (interface{}, bool) {
   if f, ok := r.value(key); ok {
-    return f()
+    return f(), true
   }else{
-    return nil
+    return nil, false
   }
 }
 
