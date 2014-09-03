@@ -56,6 +56,12 @@ func Keys() []string {
   return r.keys()
 }
 
+// Determine if a key is registered
+func HasKey(key string) bool {
+  _, ok := r.value(key)
+  return ok
+}
+
 // Obtain values
 func Value(key string) (interface{}, bool) {
   if f, ok := r.value(key); ok {
