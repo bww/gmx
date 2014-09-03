@@ -58,8 +58,7 @@ func Keys() []string {
 
 // Obtain values
 func Value(key string) interface{} {
-  f, ok := r.value(key)
-  if ok {
+  if f, ok := r.value(key); ok {
     return f()
   }else{
     return nil
