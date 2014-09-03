@@ -58,7 +58,12 @@ func Keys() []string {
 
 // Obtain values
 func Value(key string) interface{} {
-  return r.value(key)
+  f, ok := r.value(key)
+  if ok {
+    return f()
+  }else{
+    return nil
+  }
 }
 
 func serve(l net.Listener, r *registry) {
