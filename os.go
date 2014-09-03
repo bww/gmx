@@ -13,3 +13,4 @@ func init() {
 func osArgs() interface{} {
 	return os.Args
 }
+

@@ -12,7 +12,6 @@ func init() {
 	Publish("runtime.numcpu", runtimeNumCPU)
 	Publish("runtime.numgoroutine", runtimeNumGoroutine)
 	Publish("runtime.version", runtimeVersion)
-
 	Publish("runtime.memstats", runtimeMemStats)
 }
 
@@ -40,3 +39,4 @@ func runtimeMemStats() interface{} {
 	runtime.ReadMemStats(&memstats)
 	return memstats
 }
+
